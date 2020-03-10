@@ -12,7 +12,6 @@ light.position.set( 40, 25, 10 )
 light.castShadow = true
 scene.add(light)
 
-//console.log(scene.scene)
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize( window.innerWidth, window.innerHeight )
@@ -30,7 +29,15 @@ world.broadphase = new CANNON.NaiveBroadphase()
 world.solver.iterations = 10
 
 
+var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
+var edges = new THREE.EdgesGeometry( geometry );
+var line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+scene.add( line );
 
+
+function createShape(){
+  
+}
 
 var update = function() {
 
